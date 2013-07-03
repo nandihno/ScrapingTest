@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
     }
 
     public void fetchData(View view) {
-        String url = "http://www.racq.com.au";
+        String url = "http://motormouth.com.au/bestsites.aspx?city=Brisbane&fueltype=2";
         ScrapeTask task = new ScrapeTask(this);
         resultsText.setText("");
         task.execute(url);

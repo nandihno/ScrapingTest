@@ -44,8 +44,8 @@ public class ScrapeTask extends AsyncTask<String,Void,String> {
                 HttpEntity entity = response.getEntity();
                 String html = EntityUtils.toString(entity);
                 Document doc = Jsoup.parse(html);
-                Element element = doc.getElementById("headerPhone");
-                results = element.html();
+                Element element = doc.getElementById("LowestPrice1_DataListPrices");
+                results = element.text();
                 //Elements elements = doc.getElementsByClass("temps temp-now");
                 /*for(Element element:elements) {
                    results += element.text();
