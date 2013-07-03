@@ -13,6 +13,7 @@ import org.apache.http.util.EntityUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 /**
  * Created by deleonf on 2/07/13.
@@ -45,7 +46,12 @@ public class ScrapeTask extends AsyncTask<String,Void,String> {
                 String html = EntityUtils.toString(entity);
                 Document doc = Jsoup.parse(html);
                 Element element = doc.getElementById("LowestPrice1_DataListPrices");
-                results = element.text();
+                results = element.html();
+                /*Elements elements = element.getElementsByClass("content").;
+                for(Element elem:elements) {
+                    results += elem.text();
+                }
+                */
                 //Elements elements = doc.getElementsByClass("temps temp-now");
                 /*for(Element element:elements) {
                    results += element.text();
